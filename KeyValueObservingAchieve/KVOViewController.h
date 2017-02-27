@@ -2,12 +2,14 @@
 //  ViewController.h
 //  KeyValueObservingAchieve
 //
-//  Created by apple on 17/2/26.
+//  Created by 綦 on 17/2/24.
 //  Copyright © 2017年 PowesunHolding. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface KVOViewController : UIViewController
+
 
 @end
+

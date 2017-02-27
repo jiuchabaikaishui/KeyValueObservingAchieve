@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1876BD281E618B290013AB70 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1876BD271E618B290013AB70 /* Launch Screen.storyboard */; };
+		1876BD2B1E618BC00013AB70 /* ScreenLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1876BD2A1E618BC00013AB70 /* ScreenLaunchViewController.m */; };
+		1876BD2E1E618EDB0013AB70 /* AnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1876BD2D1E618EDB0013AB70 /* AnimationView.m */; };
+		1876BD311E61FCE50013AB70 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1876BD301E61FCE50013AB70 /* ViewController.m */; };
 		6E24D3431E602D1C00E75851 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24D3421E602D1C00E75851 /* main.m */; };
 		6E24D3461E602D1C00E75851 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24D3451E602D1C00E75851 /* AppDelegate.m */; };
-		6E24D3491E602D1C00E75851 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24D3481E602D1C00E75851 /* ViewController.m */; };
-		6E24D34C1E602D1C00E75851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E24D34A1E602D1C00E75851 /* Main.storyboard */; };
+		6E24D3491E602D1C00E75851 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24D3481E602D1C00E75851 /* KVOViewController.m */; };
 		6E24D34E1E602D1C00E75851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E24D34D1E602D1C00E75851 /* Assets.xcassets */; };
-		6E24D3511E602D1C00E75851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E24D34F1E602D1C00E75851 /* LaunchScreen.storyboard */; };
 		6E24D35C1E602D1C00E75851 /* KeyValueObservingAchieveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24D35B1E602D1C00E75851 /* KeyValueObservingAchieveTests.m */; };
 		6E24D3671E602D1C00E75851 /* KeyValueObservingAchieveUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24D3661E602D1C00E75851 /* KeyValueObservingAchieveUITests.m */; };
 		6E24D3761E602D8600E75851 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24D3751E602D8600E75851 /* NSObject+KVO.m */; };
@@ -38,15 +40,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1876BD271E618B290013AB70 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		1876BD291E618BC00013AB70 /* ScreenLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenLaunchViewController.h; sourceTree = "<group>"; };
+		1876BD2A1E618BC00013AB70 /* ScreenLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenLaunchViewController.m; sourceTree = "<group>"; };
+		1876BD2C1E618EDB0013AB70 /* AnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationView.h; sourceTree = "<group>"; };
+		1876BD2D1E618EDB0013AB70 /* AnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationView.m; sourceTree = "<group>"; };
+		1876BD2F1E61FCE50013AB70 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1876BD301E61FCE50013AB70 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6E24D33E1E602D1C00E75851 /* KeyValueObservingAchieve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyValueObservingAchieve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E24D3421E602D1C00E75851 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E24D3441E602D1C00E75851 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E24D3451E602D1C00E75851 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6E24D3471E602D1C00E75851 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6E24D3481E602D1C00E75851 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6E24D34B1E602D1C00E75851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6E24D3471E602D1C00E75851 /* KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOViewController.h; sourceTree = "<group>"; };
+		6E24D3481E602D1C00E75851 /* KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOViewController.m; sourceTree = "<group>"; };
 		6E24D34D1E602D1C00E75851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6E24D3501E602D1C00E75851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E24D3521E602D1C00E75851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E24D3571E602D1C00E75851 /* KeyValueObservingAchieveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyValueObservingAchieveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E24D35B1E602D1C00E75851 /* KeyValueObservingAchieveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyValueObservingAchieveTests.m; sourceTree = "<group>"; };
@@ -112,19 +119,24 @@
 			children = (
 				6E24D3441E602D1C00E75851 /* AppDelegate.h */,
 				6E24D3451E602D1C00E75851 /* AppDelegate.m */,
-				6E24D3471E602D1C00E75851 /* ViewController.h */,
-				6E24D3481E602D1C00E75851 /* ViewController.m */,
+				1876BD2F1E61FCE50013AB70 /* ViewController.h */,
+				1876BD301E61FCE50013AB70 /* ViewController.m */,
+				6E24D3471E602D1C00E75851 /* KVOViewController.h */,
+				6E24D3481E602D1C00E75851 /* KVOViewController.m */,
 				6E24D37A1E60387800E75851 /* TimeTableViewCell.h */,
 				6E24D37B1E60387800E75851 /* TimeTableViewCell.m */,
 				6E24D3771E60363200E75851 /* TimeModel.h */,
 				6E24D3781E60363200E75851 /* TimeModel.m */,
 				6E24D3741E602D8600E75851 /* NSObject+KVO.h */,
 				6E24D3751E602D8600E75851 /* NSObject+KVO.m */,
-				6E24D34A1E602D1C00E75851 /* Main.storyboard */,
 				6E24D34D1E602D1C00E75851 /* Assets.xcassets */,
-				6E24D34F1E602D1C00E75851 /* LaunchScreen.storyboard */,
 				6E24D3521E602D1C00E75851 /* Info.plist */,
 				6E24D3411E602D1C00E75851 /* Supporting Files */,
+				1876BD271E618B290013AB70 /* Launch Screen.storyboard */,
+				1876BD291E618BC00013AB70 /* ScreenLaunchViewController.h */,
+				1876BD2A1E618BC00013AB70 /* ScreenLaunchViewController.m */,
+				1876BD2C1E618EDB0013AB70 /* AnimationView.h */,
+				1876BD2D1E618EDB0013AB70 /* AnimationView.m */,
 			);
 			path = KeyValueObservingAchieve;
 			sourceTree = "<group>";
@@ -261,9 +273,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E24D3511E602D1C00E75851 /* LaunchScreen.storyboard in Resources */,
+				1876BD281E618B290013AB70 /* Launch Screen.storyboard in Resources */,
 				6E24D34E1E602D1C00E75851 /* Assets.xcassets in Resources */,
-				6E24D34C1E602D1C00E75851 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,12 +299,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1876BD311E61FCE50013AB70 /* ViewController.m in Sources */,
 				6E24D3761E602D8600E75851 /* NSObject+KVO.m in Sources */,
-				6E24D3491E602D1C00E75851 /* ViewController.m in Sources */,
+				6E24D3491E602D1C00E75851 /* KVOViewController.m in Sources */,
 				6E24D37C1E60387800E75851 /* TimeTableViewCell.m in Sources */,
 				6E24D3461E602D1C00E75851 /* AppDelegate.m in Sources */,
 				6E24D3791E60363200E75851 /* TimeModel.m in Sources */,
+				1876BD2E1E618EDB0013AB70 /* AnimationView.m in Sources */,
 				6E24D3431E602D1C00E75851 /* main.m in Sources */,
+				1876BD2B1E618BC00013AB70 /* ScreenLaunchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,25 +341,6 @@
 			targetProxy = 6E24D3631E602D1C00E75851 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		6E24D34A1E602D1C00E75851 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E24D34B1E602D1C00E75851 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6E24D34F1E602D1C00E75851 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E24D3501E602D1C00E75851 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6E24D3691E602D1C00E75851 /* Debug */ = {
@@ -525,6 +520,7 @@
 				6E24D36D1E602D1C00E75851 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E24D36E1E602D1C00E75851 /* Build configuration list for PBXNativeTarget "KeyValueObservingAchieveTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +529,7 @@
 				6E24D3701E602D1C00E75851 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E24D3711E602D1C00E75851 /* Build configuration list for PBXNativeTarget "KeyValueObservingAchieveUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +538,7 @@
 				6E24D3731E602D1C00E75851 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

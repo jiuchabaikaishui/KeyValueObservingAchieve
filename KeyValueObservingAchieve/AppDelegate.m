@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "KVOViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,9 +15,9 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    ViewController *ctr = [[ViewController alloc] init];
+    KVOViewController *ctr = [[KVOViewController alloc] init];
+    ctr.title = @"KVO倒计时";
     UINavigationController *navCtr = [[UINavigationController alloc] initWithRootViewController:ctr];
     
     UITabBarController *tabCtr = [[UITabBarController alloc] init];
