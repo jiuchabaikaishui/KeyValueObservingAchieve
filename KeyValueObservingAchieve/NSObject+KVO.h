@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^KVOBlock)(id object, id observer, NSString *key, id oldValue, id newValue);
+
 @interface NSObject (KVO)
 
-- (void)QSP_addObserver:(NSObject *)observer forkey:(NSString *)key withBlock:(void (^)(id *observer, NSString *key, id oldValue, id newValue))block;
+- (void)QSP_addObserver:(NSObject *)observer forkey:(NSString *)key withBlock:(KVOBlock)block;
 - (void)QSP_removeObserver:(NSObject *)observer forkey:(NSString *)key;
 
 @end

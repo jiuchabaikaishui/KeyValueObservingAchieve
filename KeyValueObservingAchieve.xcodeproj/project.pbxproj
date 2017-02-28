@@ -20,6 +20,7 @@
 		6E24D3761E602D8600E75851 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24D3751E602D8600E75851 /* NSObject+KVO.m */; };
 		6E24D3791E60363200E75851 /* TimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24D3781E60363200E75851 /* TimeModel.m */; };
 		6E24D37C1E60387800E75851 /* TimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24D37B1E60387800E75851 /* TimeTableViewCell.m */; };
+		6E39C7351E63D6C300C69692 /* QSPKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E39C7341E63D6C300C69692 /* QSPKVOViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		6E24D3781E60363200E75851 /* TimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeModel.m; sourceTree = "<group>"; };
 		6E24D37A1E60387800E75851 /* TimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeTableViewCell.h; sourceTree = "<group>"; };
 		6E24D37B1E60387800E75851 /* TimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeTableViewCell.m; sourceTree = "<group>"; };
+		6E39C7331E63D6C300C69692 /* QSPKVOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSPKVOViewController.h; sourceTree = "<group>"; };
+		6E39C7341E63D6C300C69692 /* QSPKVOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSPKVOViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				1876BD301E61FCE50013AB70 /* ViewController.m */,
 				6E24D3471E602D1C00E75851 /* KVOViewController.h */,
 				6E24D3481E602D1C00E75851 /* KVOViewController.m */,
+				6E39C7331E63D6C300C69692 /* QSPKVOViewController.h */,
+				6E39C7341E63D6C300C69692 /* QSPKVOViewController.m */,
 				6E24D37A1E60387800E75851 /* TimeTableViewCell.h */,
 				6E24D37B1E60387800E75851 /* TimeTableViewCell.m */,
 				6E24D3771E60363200E75851 /* TimeModel.h */,
@@ -301,6 +306,7 @@
 			files = (
 				1876BD311E61FCE50013AB70 /* ViewController.m in Sources */,
 				6E24D3761E602D8600E75851 /* NSObject+KVO.m in Sources */,
+				6E39C7351E63D6C300C69692 /* QSPKVOViewController.m in Sources */,
 				6E24D3491E602D1C00E75851 /* KVOViewController.m in Sources */,
 				6E24D37C1E60387800E75851 /* TimeTableViewCell.m in Sources */,
 				6E24D3461E602D1C00E75851 /* AppDelegate.m in Sources */,
@@ -367,7 +373,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -415,7 +421,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

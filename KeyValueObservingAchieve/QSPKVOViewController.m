@@ -1,18 +1,19 @@
 //
-//  ViewController.m
+//  QSPKVOViewController.m
 //  KeyValueObservingAchieve
 //
-//  Created by 綦 on 17/2/24.
+//  Created by 綦 on 17/2/27.
 //  Copyright © 2017年 PowesunHolding. All rights reserved.
 //
 
-#import "KVOViewController.h"
+#import "QSPKVOViewController.h"
 #import "TimeTableViewCell.h"
 #import "AnimationView.h"
+#import "NSObject+KVO.h"
 
-static void *KVOContext_ContentOffset = 0;
+static void *QSPKVOContext_ContentOffset = 0;
 
-@interface KVOViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface QSPKVOViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *dataArr;
 @property (strong, nonatomic) NSTimer *timer;
@@ -21,7 +22,7 @@ static void *KVOContext_ContentOffset = 0;
 
 @end
 
-@implementation KVOViewController
+@implementation QSPKVOViewController
 #pragma mark - 属性方法
 - (NSMutableArray *)dataArr
 {
@@ -68,43 +69,66 @@ static void *KVOContext_ContentOffset = 0;
     [headerView addSubview:animationView];
     self.animationView = animationView;
     self.tableView.tableHeaderView = headerView;
-    [self.tableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:KVOContext_ContentOffset];
+    [self.tableView QSP_addObserver:self forkey:@"contentOffset" withBlock:^(id object, id observer, NSString *key, id oldValue, id newValue) {
+        if (self.navBackView == nil) {
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, 64)];
+            view.backgroundColor = [UIColor orangeColor];
+            [self.navigationController.navigationBar insertSubview:view atIndex:0];
+            self.navBackView = view;
+        }
+        
+        CGPoint contentOffset = [newValue CGPointValue];
+        CGFloat alpha = (contentOffset.y - 64)*(1/136.0);
+        
+        if (alpha >= 1) {
+            self.navBackView.alpha = 1;
+        }
+        else if (alpha > 0 && alpha < 1)
+        {
+            self.navBackView.alpha = alpha;
+        }
+        else
+        {
+            self.navBackView.alpha = 0;
+        }
+    }];
+//    [self.tableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:QSPKVOContext_ContentOffset];
     
     CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(linkAction:)];
     [link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     self.timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
-{
-    if (context == KVOContext_ContentOffset) {
-        if ([keyPath isEqualToString:@"contentOffset"]) {
-            if (self.navBackView == nil) {
-                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, 64)];
-                view.backgroundColor = [UIColor orangeColor];
-                [self.navigationController.navigationBar insertSubview:view atIndex:0];
-                self.navBackView = view;
-            }
-            
-            CGPoint contentOffset = [change[NSKeyValueChangeNewKey] CGPointValue];
-            CGFloat alpha = (contentOffset.y - 64)*(1/136.0);
-            
-            if (alpha >= 1) {
-                self.navBackView.alpha = 1;
-            }
-            else if (alpha > 0 && alpha < 1)
-            {
-                self.navBackView.alpha = alpha;
-            }
-            else
-            {
-                self.navBackView.alpha = 0;
-            }
-        }
-    } else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
-}
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+//{
+//    if (context == QSPKVOContext_ContentOffset) {
+//        if ([keyPath isEqualToString:@"contentOffset"]) {
+//            if (self.navBackView == nil) {
+//                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, 64)];
+//                view.backgroundColor = [UIColor orangeColor];
+//                [self.navigationController.navigationBar insertSubview:view atIndex:0];
+//                self.navBackView = view;
+//            }
+//            
+//            CGPoint contentOffset = [change[NSKeyValueChangeNewKey] CGPointValue];
+//            CGFloat alpha = (contentOffset.y - 64)*(1/136.0);
+//            
+//            if (alpha >= 1) {
+//                self.navBackView.alpha = 1;
+//            }
+//            else if (alpha > 0 && alpha < 1)
+//            {
+//                self.navBackView.alpha = alpha;
+//            }
+//            else
+//            {
+//                self.navBackView.alpha = 0;
+//            }
+//        }
+//    } else {
+//        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+//    }
+//}
 - (void)timerAction:(NSTimer *)timer
 {
     for (TimeModel *timeModel in self.dataArr) {

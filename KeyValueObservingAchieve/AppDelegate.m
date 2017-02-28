@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "KVOViewController.h"
+#import "QSPKVOViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,12 +17,16 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    KVOViewController *ctr = [[KVOViewController alloc] init];
-    ctr.title = @"KVO倒计时";
-    UINavigationController *navCtr = [[UINavigationController alloc] initWithRootViewController:ctr];
+    KVOViewController *KVOCtr = [[KVOViewController alloc] init];
+    KVOCtr.title = @"KVO";
+    UINavigationController *KVONavCtr = [[UINavigationController alloc] initWithRootViewController:KVOCtr];
+    
+    QSPKVOViewController *QSPKVOCtr = [[QSPKVOViewController alloc] init];
+    QSPKVOCtr.title = @"QSPKVO";
+    UINavigationController *QSPKVONavCtr = [[UINavigationController alloc] initWithRootViewController:QSPKVOCtr];
     
     UITabBarController *tabCtr = [[UITabBarController alloc] init];
-    tabCtr.viewControllers = @[navCtr];
+    tabCtr.viewControllers = @[KVONavCtr, QSPKVONavCtr];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor blackColor];
