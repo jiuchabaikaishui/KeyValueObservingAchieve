@@ -93,11 +93,17 @@ static void *QSPKVOContext_ContentOffset = 0;
         }
     }];
 //    [self.tableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:QSPKVOContext_ContentOffset];
-    
     CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(linkAction:)];
     [link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     self.timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"漂移" style:UIBarButtonItemStylePlain target:self action:@selector(itemAction:)];
+    self.navigationItem.rightBarButtonItem = item;
+}
+- (void)itemAction:(UIBarButtonItem *)sender
+{
+    [self.tableView setContentOffset:CGPointMake(0, 200)];
 }
 //- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 //{
