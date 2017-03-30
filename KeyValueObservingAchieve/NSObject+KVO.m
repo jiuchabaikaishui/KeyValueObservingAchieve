@@ -156,7 +156,7 @@ void kvo_setter(id self, SEL _cmd, CGPoint value)
     }
     else
     {
-        NSLog(@"重写class方法成功！");
+        NSLog(@"重写class方法失败！");
     }
     objc_registerClassPair(kvoClass);
     

@@ -42,6 +42,10 @@
 }
 
 #pragma mark - 控制器周期
+- (void)dealloc
+{
+    [self.tableView QSP_removeObserver:self forkey:@"contentOffset"];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     

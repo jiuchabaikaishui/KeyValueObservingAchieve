@@ -41,6 +41,10 @@ static void *KVOContext_ContentOffset = 0;
 }
 
 #pragma mark - 控制器周期
+- (void)dealloc
+{
+    [self removeObserver:self.tableView forKeyPath:@"contentOffset"];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
