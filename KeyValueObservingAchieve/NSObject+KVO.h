@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-typedef void (^KVOBlock)(id object, id observer, NSString *key, id oldValue, id newValue);
+typedef void (^KVOBlock)(id object, id observer, NSString *key, CGPoint oldValue, CGPoint newValue);
 
 @interface NSObject (KVO)
 

@@ -107,7 +107,7 @@ Class kvo_class(id self, SEL _cmd)
 /**
  kvo类的setter方法的IMP
  */
-void kvo_setter(id self, SEL _cmd, id value)
+void kvo_setter(id self, SEL _cmd, CGPoint value)
 {
     NSString *setterName = NSStringFromSelector(_cmd);
     NSString *getterName = getterForSetter(setterName);
@@ -118,20 +118,19 @@ void kvo_setter(id self, SEL _cmd, id value)
     
     id oldValue = [self valueForKey:getterName];
     NSLog(@"oldValue:%@", oldValue);
-//    objc_msgSendSuper((__bridge struct objc_super *)(class_getSuperclass(object_getClass(self))), _cmd, value);
-//    ((void(*)(id,SEL, CGPoint))objc_msgSendSuper)(class_getSuperclass(object_getClass(self)), _cmd, value);
+    NSLog(@"newValue:%@", NSStringFromCGPoint(value));
     
     struct objc_super superclazz = {
         .receiver = self,
         .super_class = class_getSuperclass(object_getClass(self))
     };
     void (*objc_msgSendSuperCasted)(void *, SEL, CGPoint) = (void *)objc_msgSendSuper;
-    objc_msgSendSuperCasted(&superclazz, _cmd, [value CGPointValue]);
+    objc_msgSendSuperCasted(&superclazz, _cmd, value);
     
     NSMutableDictionary *infoDic = objc_getAssociatedObject(self, KVOInfoDictionaryName.UTF8String);
     QSPKVOInfo *info = infoDic[getterName];
     if (info.block) {
-        info.block(self, info.observer, info.key, oldValue, nil);
+        info.block(self, info.observer, info.key, [oldValue CGPointValue], value);
     }
 }
 
@@ -188,8 +187,10 @@ void kvo_setter(id self, SEL _cmd, id value)
         const char *methodTypes = method_getTypeEncoding(class_getInstanceMethod(class, setterSelector));
         NSLog(@"%s", methodTypes);
         BOOL success = NO;
-        NSLog(@"%@", [[self valueForKey:key] class]);
-        success = class_addMethod(class, setterSelector, (IMP)kvo_setter, "V@:*");
+        NSLog(@"valueClass:%@", [[self valueForKey:key] class]);
+        if ([[self valueForKey:key] isKindOfClass:[NSObject class]]) {
+            success = class_addMethod(class, setterSelector, (IMP)kvo_setter, methodTypes);
+        }
         if (success) {
             NSLog(@"重写%@方法成功！", NSStringFromSelector(setterSelector));
         }
